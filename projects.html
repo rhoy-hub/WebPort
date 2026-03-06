@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — Rhoy Abadiano</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230a0a0f'/><text x='50%25' y='55%25' dominant-baseline='central' text-anchor='middle' font-family='Arial Black' font-weight='900' font-size='20' fill='%23c8ff00'>R</text></svg>">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .proj-wrap{max-width:1100px;margin:0 auto;padding:4rem 3rem}
+    .proj-header{margin-bottom:4rem}
+    .proj-section{margin-bottom:4rem}
+    .proj-section-label{display:flex;align-items:center;gap:1rem;margin-bottom:1.75rem}
+    .proj-section-label h2{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:var(--white);white-space:nowrap}
+    .proj-section-label::after{content:'';flex:1;height:1px;background:var(--border)}
+    .proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.5rem}
+    .proj-card{background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:all .25s}
+    .proj-card:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 12px 32px rgba(200,255,0,.08)}
+    .proj-video-wrap{position:relative;background:#000;aspect-ratio:16/9;overflow:hidden}
+    .proj-video-wrap video{width:100%;height:100%;object-fit:cover;display:block}
+    .proj-body{padding:1.25rem 1.5rem 1.5rem}
+    .proj-cat-tag{display:inline-block;font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);margin-bottom:.5rem}
+    .proj-title{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:800;color:var(--white);margin-bottom:.5rem;letter-spacing:-.02em}
+    .proj-desc{font-size:.85rem;color:var(--text-muted);line-height:1.65}
+    .proj-card-wide{grid-column:1/-1;display:grid;grid-template-columns:1.2fr 1fr}
+    .proj-card-wide .proj-video-wrap{aspect-ratio:unset;height:100%;min-height:240px}
+    .proj-card-wide .proj-body{display:flex;flex-direction:column;justify-content:center;padding:2rem}
+    .proj-card-wide .proj-title{font-size:1.4rem}
+    .proj-card-wide .proj-desc{font-size:.9rem}
+    @media(max-width:768px){
+      .proj-wrap{padding:2rem 1.5rem}
+      .proj-card-wide{grid-template-columns:1fr;grid-column:1}
+      .proj-card-wide .proj-video-wrap{min-height:auto;aspect-ratio:16/9}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ════════════ NAVIGATION ════════════ -->
+  <nav>
+    <a href="index.html" class="nav-logo">Rhoy<span>.</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="resume.pdf" download class="nav-cta">↓ Resume</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ════════════ MAIN ════════════ -->
+  <main class="page-wrapper">
+    <div class="proj-wrap">
+      <div class="proj-header">
+        <p class="section-eyebrow">What I've Built</p>
+        <h1 class="section-title">Projects</h1>
+        <p class="section-sub">A collection of games, systems, and platforms I've designed and developed — each one a new challenge and learning experience.</p>
+      </div>
+
+      <!-- E-COMMERCE -->
+      <div class="proj-section">
+        <div class="proj-section-label"><h2>E-Commerce Systems</h2></div>
+        <div class="proj-grid">
+          <div class="proj-card proj-card-wide">
+            <div class="proj-video-wrap">
+              <video controls><source src="xp.mp4" type="video/mp4"></video>
+            </div>
+            <div class="proj-body">
+              <span class="proj-cat-tag">E-Commerce</span>
+              <div class="proj-title">Knowledge XP</div>
+              <p class="proj-desc">A fully responsive e-commerce website with shopping cart, product catalog, user authentication, and payment integration. Built with modern web technologies for a seamless buying experience.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- GAME DEV -->
+      <div class="proj-section">
+        <div class="proj-section-label"><h2>Game Development</h2></div>
+        <div class="proj-grid">
+          <div class="proj-card">
+            <div class="proj-video-wrap"><video controls><source src="heroquiz.mp4" type="video/mp4"></video></div>
+            <div class="proj-body"><span class="proj-cat-tag">Game Dev</span><div class="proj-title">Hero Quiz</div><p class="proj-desc">An interactive 2D quiz-RPG with character movement, collision detection, scoring system, and multiple levels.</p></div>
+          </div>
+          <div class="proj-card">
+            <div class="proj-video-wrap"><video controls><source src="quizdash.mp4" type="video/mp4"></video></div>
+            <div class="proj-body"><span class="proj-cat-tag">Game Dev</span><div class="proj-title">Quiz Dash</div><p class="proj-desc">A fast-paced arcade game with obstacles, sound effects, and increasing difficulty built on modern game mechanics.</p></div>
+          </div>
+          <div class="proj-card">
+            <div class="proj-video-wrap"><video controls><source src="spazzer.mp4" type="video/mp4"></video></div>
+            <div class="proj-body"><span class="proj-cat-tag">Game Dev</span><div class="proj-title">SPAZZER</div><p class="proj-desc">A space-impact arcade game featuring enemies, obstacles, sound effects, and escalating difficulty waves.</p></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- INFORMATION SYSTEMS -->
+      <div class="proj-section">
+        <div class="proj-section-label"><h2>Information Systems</h2></div>
+        <div class="proj-grid">
+          <div class="proj-card proj-card-wide">
+            <div class="proj-video-wrap"><video controls><source src="lostandf.mp4" type="video/mp4"></video></div>
+            <div class="proj-body">
+              <span class="proj-cat-tag">Information System</span>
+              <div class="proj-title">NC Lost &amp; Found Management System</div>
+              <p class="proj-desc">A comprehensive information system for managing lost and found items at Norzagaray College. Features database integration, user role management, and detailed reporting dashboards.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ORDERING SYSTEMS -->
+      <div class="proj-section">
+        <div class="proj-section-label"><h2>Ordering Systems</h2></div>
+        <div class="proj-grid">
+          <div class="proj-card proj-card-wide">
+            <div class="proj-video-wrap"><video controls><source src="order.mp4" type="video/mp4"></video></div>
+            <div class="proj-body">
+              <span class="proj-cat-tag">Ordering System</span>
+              <div class="proj-title">Restaurant Ordering System</div>
+              <p class="proj-desc">A digital ordering platform for restaurants featuring menu management, real-time order tracking, kitchen display system, and customer notifications with live updates.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ════════════ FOOTER ════════════ -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <p>Rhoy<span>.</span>Abadiano</p>
+        <small>Game Developer &amp; Designer · Norzagaray College</small>
+      </div>
+      <div class="footer-nav">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><a href="mailto:rhoyabadiano54@gmail.com">rhoyabadiano54@gmail.com</a></p>
+        <p><a href="https://linkedin.com/in/rhoyabadiano" target="_blank">LinkedIn</a></p>
+        <p><a href="https://github.com/rhoy-hub" target="_blank">GitHub</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Rhoy Abadiano. All rights reserved.</p>
+      <a href="resume.pdf" download class="btn btn-outline" style="font-size:.8rem;padding:.4rem 1rem;">↓ Download Resume</a>
+    </div>
+  </footer>
+
+  <script src="shared.js"></script>
+</body>
+</html>
