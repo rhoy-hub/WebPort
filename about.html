@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — Rhoy Abadiano</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230a0a0f'/><text x='50%25' y='55%25' dominant-baseline='central' text-anchor='middle' font-family='Arial Black' font-weight='900' font-size='20' fill='%23c8ff00'>R</text></svg>">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .about-wrap{max-width:1100px;margin:0 auto;padding:4rem 3rem}
+    .about-grid{display:grid;grid-template-columns:320px 1fr;gap:5rem;margin-top:4rem;align-items:start}
+    .about-photo-col{position:sticky;top:90px}
+    .about-img-frame{border-radius:16px;overflow:hidden;border:1px solid var(--border);aspect-ratio:3/4;background:var(--surface2)}
+    .about-img-frame img{width:100%;height:100%;object-fit:cover;object-position:top;filter:grayscale(15%);transition:filter .4s}
+    .about-img-frame:hover img{filter:grayscale(0%)}
+    .about-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.25rem}
+    .cert-preview{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1.5rem}
+    .cert-thumb{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;cursor:pointer;transition:all .2s}
+    .cert-thumb:hover{border-color:var(--accent);transform:translateY(-2px)}
+    .cert-thumb img{width:100%;display:block;height:100px;object-fit:cover;opacity:.85}
+    .cert-thumb p{padding:.5rem .75rem;font-size:.72rem;color:var(--text-muted);line-height:1.4}
+    .about-content h2{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;color:var(--white);letter-spacing:-.03em;margin-bottom:1rem}
+    .about-content p{color:var(--text-muted);line-height:1.8;margin-bottom:1.25rem;font-size:.96rem}
+    .about-content p strong{color:var(--text);font-weight:600}
+    .about-divider{height:1px;background:var(--border);margin:2.5rem 0}
+    .info-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:2rem}
+    .info-item{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:1rem 1.25rem}
+    .info-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--text-muted);font-weight:600;margin-bottom:.35rem}
+    .info-value{font-size:.92rem;color:var(--white);font-weight:500}
+    @media(max-width:900px){
+      .about-grid{grid-template-columns:1fr;gap:2.5rem}
+      .about-photo-col{position:static}
+      .about-wrap{padding:2rem 1.5rem}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ════════════ NAVIGATION ════════════ -->
+  <nav>
+    <a href="index.html" class="nav-logo">Rhoy<span>.</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="resume.pdf" download class="nav-cta">↓ Resume</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ════════════ MAIN ════════════ -->
+  <main class="page-wrapper">
+    <div class="about-wrap">
+      <p class="section-eyebrow">About Me</p>
+      <h1 class="section-title">The person behind<br>the projects</h1>
+
+      <div class="about-grid">
+        <!-- LEFT -->
+        <div class="about-photo-col">
+          <div class="about-img-frame">
+            <img src="me.jpg" alt="Rhoy Abadiano">
+          </div>
+          <div class="about-tags">
+            <span class="tag">Game Development</span>
+            <span class="tag">UI/UX Design</span>
+            <span class="tag">3D Modeling</span>
+            <span class="tag">Web Dev</span>
+            <span class="tag">Leadership</span>
+            <span class="tag">Open Source</span>
+          </div>
+          <div style="margin-top:2rem">
+            <p style="font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--text-muted);font-weight:700;margin-bottom:1rem">Certificates</p>
+            <div class="cert-preview">
+              <div class="cert-thumb" onclick="openModal('m1')">
+                <img src="Cn.png" alt="Computer Network"><p>Computer Network</p>
+              </div>
+              <div class="cert-thumb" onclick="openModal('m2')">
+                <img src="OVER.png" alt="Overview of AI"><p>Overview of AI</p>
+              </div>
+              <div class="cert-thumb" onclick="openModal('m3')">
+                <img src="CRA.png" alt="CRA Training"><p>Computer Networks (CRA)</p>
+              </div>
+              <div class="cert-thumb" onclick="openModal('m4')">
+                <img src="GEN.png" alt="Gen Knowledge"><p>General Knowledge CN</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT -->
+        <div class="about-content">
+          <div class="info-grid">
+            <div class="info-item"><div class="info-label">Currently</div><div class="info-value">3rd Year BSCS</div></div>
+            <div class="info-item"><div class="info-label">School</div><div class="info-value">Norzagaray College</div></div>
+            <div class="info-item"><div class="info-label">Location</div><div class="info-value">Norzagaray, Bulacan</div></div>
+            <div class="info-item"><div class="info-label">Status</div><div class="info-value" style="color:var(--accent)">Open to work</div></div>
+          </div>
+
+          <h2>Hello, I'm Rhoy 👋</h2>
+          <p>I'm a young, dedicated game developer and computer science student with a passion for building things that are both <strong>functional and beautiful</strong>. My journey into tech started with curiosity about how games work — and it grew into a full obsession with the craft of software.</p>
+          <p>Currently in my 3rd year pursuing a <strong>Bachelor of Science in Computer Science</strong> at Norzagaray College, I've been sharpening skills across game development, web technologies, databases, and UI/UX design.</p>
+
+          <div class="about-divider"></div>
+
+          <h2>What drives me</h2>
+          <p>I thrive at the intersection of <strong>creativity and logic</strong>. Whether it's architecting a game's systems, designing a slick UI in Figma, or building a responsive web app, I approach every project with full commitment and attention to detail.</p>
+          <p>Outside of coding, I explore new design trends, contribute to open-source efforts, and enjoy sharing knowledge with the developer community. I believe in <strong>learning in public</strong> and growing alongside others.</p>
+
+          <div class="about-divider"></div>
+
+          <h2>Certifications</h2>
+          <p>Beyond my formal degree, I've completed several <strong>Huawei ICT Academy</strong> courses — earning certificates in Computer Networks, Overview of AI, Computer Networks CRA Training Program, and General Knowledge of Computer Networks. Click any certificate card on the left to view it in full.</p>
+
+          <div style="margin-top:2rem">
+            <a href="resume.pdf" download class="btn btn-primary">↓ Download Full Resume</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ════════════ FOOTER ════════════ -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <p>Rhoy<span>.</span>Abadiano</p>
+        <small>Game Developer &amp; Designer · Norzagaray College</small>
+      </div>
+      <div class="footer-nav">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><a href="mailto:rhoyabadiano54@gmail.com">rhoyabadiano54@gmail.com</a></p>
+        <p><a href="https://linkedin.com/in/rhoyabadiano" target="_blank">LinkedIn</a></p>
+        <p><a href="https://github.com/rhoy-hub" target="_blank">GitHub</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Rhoy Abadiano. All rights reserved.</p>
+      <a href="resume.pdf" download class="btn btn-outline" style="font-size:.8rem;padding:.4rem 1rem;">↓ Download Resume</a>
+    </div>
+  </footer>
+
+  <!-- Certificate Modals -->
+  <div id="m1" class="modal-overlay"><div class="modal-box"><button class="modal-close" onclick="closeModal('m1')">✕</button><h3>Computer Network — Huawei ICT Academy</h3><img src="Cn.png" class="modal-cert-img"></div></div>
+  <div id="m2" class="modal-overlay"><div class="modal-box"><button class="modal-close" onclick="closeModal('m2')">✕</button><h3>Overview of AI — Huawei ICT Academy</h3><img src="OVER.png" class="modal-cert-img"></div></div>
+  <div id="m3" class="modal-overlay"><div class="modal-box"><button class="modal-close" onclick="closeModal('m3')">✕</button><h3>Computer Networks (CRA) — Huawei ICT Academy</h3><img src="CRA.png" class="modal-cert-img"></div></div>
+  <div id="m4" class="modal-overlay"><div class="modal-box"><button class="modal-close" onclick="closeModal('m4')">✕</button><h3>General Knowledge CN — Huawei ICT Academy</h3><img src="GEN.png" class="modal-cert-img"></div></div>
+
+  <script src="shared.js"></script>
+</body>
+</html>b
