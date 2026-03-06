@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rhoy Abadiano — Portfolio</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230a0a0f'/><text x='50%25' y='55%25' dominant-baseline='central' text-anchor='middle' font-family='Arial Black' font-weight='900' font-size='20' fill='%23c8ff00'>R</text></svg>">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .hero{min-height:100vh;display:flex;align-items:center;padding:0 3rem;max-width:1100px;margin:0 auto;gap:4rem}
+    .hero-text{flex:1}
+    .hero-eyebrow{font-family:'Syne',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:1.5rem;display:flex;align-items:center;gap:.75rem}
+    .hero-eyebrow::before{content:'';display:block;width:32px;height:2px;background:var(--accent)}
+    .hero-name{font-family:'Syne',sans-serif;font-size:clamp(3.5rem,7vw,6rem);font-weight:800;color:var(--white);line-height:1;letter-spacing:-.04em;margin-bottom:1.5rem}
+    .hero-name .outline{color:transparent;-webkit-text-stroke:2px var(--accent)}
+    .hero-desc{font-size:1.1rem;color:var(--text-muted);line-height:1.75;max-width:480px;margin-bottom:2.5rem}
+    .hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+    .hero-stats{display:flex;gap:2rem;margin-top:3rem;padding-top:2rem;border-top:1px solid var(--border)}
+    .stat-num{font-family:'Syne',sans-serif;font-size:1.75rem;font-weight:800;color:var(--white)}
+    .stat-num span{color:var(--accent)}
+    .stat-label{font-size:.8rem;color:var(--text-muted)}
+    .hero-photo-wrap{position:relative;flex-shrink:0}
+    .hero-photo-bg{width:320px;height:320px;border-radius:16px;background:var(--surface2);border:1px solid var(--border);overflow:hidden;position:relative}
+    .hero-photo-bg img{width:100%;height:100%;object-fit:cover;object-position:top center}
+    .hero-photo-bg::after{content:'';position:absolute;bottom:0;left:0;right:0;height:40%;background:linear-gradient(to top,var(--bg),transparent)}
+    .hero-accent-ring{position:absolute;width:110px;height:110px;border-radius:50%;border:2px solid var(--accent);top:-16px;right:-16px;opacity:.4;animation:spin 12s linear infinite}
+    .hero-accent-dot{position:absolute;width:14px;height:14px;background:var(--accent);border-radius:50%;bottom:28px;left:-7px;animation:pulse 2s ease-in-out infinite}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.7)}}
+    .grid-bg{position:fixed;inset:0;pointer-events:none;z-index:0;background-image:linear-gradient(var(--border) 1px,transparent 1px),linear-gradient(90deg,var(--border) 1px,transparent 1px);background-size:60px 60px;opacity:.25}
+    .grid-glow{position:fixed;top:-200px;right:-200px;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(200,255,0,.06) 0%,transparent 70%);pointer-events:none;z-index:0}
+    .hero-text>*{opacity:0;transform:translateY(24px);animation:fadeUp .7s forwards}
+    .hero-text>*:nth-child(1){animation-delay:.1s}
+    .hero-text>*:nth-child(2){animation-delay:.2s}
+    .hero-text>*:nth-child(3){animation-delay:.3s}
+    .hero-text>*:nth-child(4){animation-delay:.4s}
+    .hero-text>*:nth-child(5){animation-delay:.5s}
+    .hero-photo-wrap{opacity:0;animation:fadeUp .7s .3s forwards}
+    @keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+    @media(max-width:900px){
+      .hero{flex-direction:column-reverse;padding:2rem 1.5rem;text-align:center;padding-top:7rem}
+      .hero-eyebrow{justify-content:center}
+      .hero-actions{justify-content:center}
+      .hero-photo-bg{width:240px;height:300px}
+      .hero-stats{justify-content:center}
+      .hero-desc{margin:0 auto 2.5rem}
+    }
+  </style>
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <div class="grid-glow"></div>
+
+  <!-- ════════════ NAVIGATION ════════════ -->
+  <nav>
+    <a href="index.html" class="nav-logo">Rhoy<span>.</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="resume.pdf" download class="nav-cta">↓ Resume</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ════════════ HERO ════════════ -->
+  <main>
+    <div class="hero">
+      <div class="hero-text">
+        <div class="hero-eyebrow">Available for opportunities</div>
+        <h1 class="hero-name">Rhoy<br><span class="outline">Abadiano</span></h1>
+        <p class="hero-desc">Game Developer, Designer, and Creative Thinker studying Computer Science at Norzagaray College. I build games, systems, and digital experiences that matter.</p>
+        <div class="hero-actions">
+          <a href="projects.html" class="btn btn-primary">View Projects →</a>
+          <a href="resume.pdf" download class="btn btn-outline">↓ Download Resume</a>
+        </div>
+        <div class="hero-stats">
+          <div><div class="stat-num">7<span>+</span></div><div class="stat-label">Projects Built</div></div>
+          <div><div class="stat-num">4<span>+</span></div><div class="stat-label">Certificates</div></div>
+          <div><div class="stat-num">6<span>+</span></div><div class="stat-label">Languages</div></div>
+        </div>
+      </div>
+      <div class="hero-photo-wrap">
+        <div class="hero-accent-ring"></div>
+        <div class="hero-photo-bg">
+          <img src="me.jpg" alt="Rhoy Abadiano">
+        </div>
+        <div class="hero-accent-dot"></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ════════════ FOOTER ════════════ -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <p>Rhoy<span>.</span>Abadiano</p>
+        <small>Game Developer &amp; Designer · Norzagaray College</small>
+      </div>
+      <div class="footer-nav">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><a href="mailto:rhoyabadiano54@gmail.com">rhoyabadiano54@gmail.com</a></p>
+        <p><a href="https://linkedin.com/in/rhoyabadiano" target="_blank">LinkedIn</a></p>
+        <p><a href="https://github.com/rhoy-hub" target="_blank">GitHub</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Rhoy Abadiano. All rights reserved.</p>
+      <a href="resume.pdf" download class="btn btn-outline" style="font-size:.8rem;padding:.4rem 1rem;">↓ Download Resume</a>
+    </div>
+  </footer>
+
+  <script src="shared.js"></script>
+</body>
+</html>
