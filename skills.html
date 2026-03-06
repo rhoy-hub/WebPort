@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills — Rhoy Abadiano</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%230a0a0f'/><text x='50%25' y='55%25' dominant-baseline='central' text-anchor='middle' font-family='Arial Black' font-weight='900' font-size='20' fill='%23c8ff00'>R</text></svg>">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .skills-wrap{max-width:1100px;margin:0 auto;padding:4rem 3rem}
+    .skills-header{margin-bottom:4rem}
+    .skill-section{margin-bottom:4rem}
+    .skill-section-label{display:flex;align-items:center;gap:1rem;margin-bottom:1.75rem}
+    .skill-section-label h2{font-family:'Syne',sans-serif;font-size:1.1rem;font-weight:700;color:var(--white);white-space:nowrap}
+    .skill-section-label::after{content:'';flex:1;height:1px;background:var(--border)}
+    .skill-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
+    .skill-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:1.5rem;transition:all .2s;position:relative;overflow:hidden}
+    .skill-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:100%;background:var(--accent);opacity:0;transition:opacity .2s}
+    .skill-card:hover{border-color:var(--accent);transform:translateY(-3px);box-shadow:0 8px 24px rgba(200,255,0,.08)}
+    .skill-card:hover::before{opacity:1}
+    .skill-icon{width:40px;height:40px;border-radius:10px;background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:1.25rem;margin-bottom:.75rem}
+    .skill-name{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--white);margin-bottom:.35rem}
+    .skill-desc{font-size:.82rem;color:var(--text-muted);line-height:1.55;margin-bottom:1rem}
+    .cert-badge{display:inline-flex;align-items:center;gap:.4rem;padding:.3rem .75rem;background:rgba(200,255,0,.08);border:1px solid rgba(200,255,0,.25);border-radius:100px;font-size:.72rem;color:var(--accent);font-weight:600;cursor:pointer;transition:all .2s}
+    .cert-badge:hover{background:rgba(200,255,0,.15)}
+    .skill-level{margin-top:1rem;height:3px;background:var(--surface2);border-radius:3px;overflow:hidden}
+    .skill-level-bar{height:100%;background:var(--accent);border-radius:3px}
+    @media(max-width:768px){.skills-wrap{padding:2rem 1.5rem}.skill-grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+
+  <!-- ════════════ NAVIGATION ════════════ -->
+  <nav>
+    <a href="index.html" class="nav-logo">Rhoy<span>.</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="skills.html" class="active">Skills</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="resume.pdf" download class="nav-cta">↓ Resume</a></li>
+    </ul>
+    <div class="hamburger" onclick="toggleNav()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ════════════ MAIN ════════════ -->
+  <main class="page-wrapper">
+    <div class="skills-wrap">
+      <div class="skills-header">
+        <p class="section-eyebrow">What I Know</p>
+        <h1 class="section-title">Skills &amp; Expertise</h1>
+        <p class="section-sub">A range of languages, tools, and technologies I've worked with — some with formal certification, all with hands-on practice.</p>
+      </div>
+
+      <!-- PROGRAMMING LANGUAGES -->
+      <div class="skill-section">
+        <div class="skill-section-label"><h2>Programming Languages</h2></div>
+        <div class="skill-grid">
+          <div class="skill-card"><div class="skill-icon">🐍</div><div class="skill-name">Python</div><div class="skill-desc">Data analysis, automation, web development with Django and Flask</div><div class="skill-level"><div class="skill-level-bar" style="width:75%"></div></div></div>
+          <div class="skill-card"><div class="skill-icon">☕</div><div class="skill-name">Java</div><div class="skill-desc">Object-oriented programming, desktop applications, and backend development</div><div class="skill-level"><div class="skill-level-bar" style="width:70%"></div></div></div>
+          <div class="skill-card"><div class="skill-icon">🎮</div><div class="skill-name">C#</div><div class="skill-desc">.NET framework, Windows applications, and game development with Unity</div><div class="skill-level"><div class="skill-level-bar" style="width:80%"></div></div></div>
+          <div class="skill-card"><div class="skill-icon">⚡</div><div class="skill-name">C++</div><div class="skill-desc">System programming, game engines, and performance-critical applications</div><div class="skill-level"><div class="skill-level-bar" style="width:65%"></div></div></div>
+          <div class="skill-card"><div class="skill-icon">🔧</div><div class="skill-name">C</div><div class="skill-desc">Low-level programming, embedded systems, and algorithm implementation</div><div class="skill-level"><div class="skill-level-bar" style="width:60%"></div></div></div>
+          <div class="skill-card"><div class="skill-icon">🖥</div><div class="skill-name">Visual Basic</div><div class="skill-desc">Windows forms applications, database integration, and rapid development</div><div class="skill-level"><div class="skill-level-bar" style="width:65%"></div></div></div>
+        </div>
+      </div>
+
+      <!-- WEB DEVELOPMENT -->
+      <div class="skill-section">
+        <div class="skill-section-label"><h2>Web Development</h2></div>
+        <div class="skill-grid">
+          <div class="skill-card"><div class="skill-icon">🌐</div><div class="skill-name">HTML5</div><div class="skill-desc">Semantic markup, accessibility standards, and modern HTML features</div><div class="skill-level"><div class="skill-level-bar" style="width:85%"></div></div></div>
+          <div class="skill-card"><div class="skill-icon">🎨</div><div class="skill-name">CSS3</div><div class="skill-desc">Responsive design, Flexbox, Grid, animations, and modern CSS techniques</div><div class="skill-level"><div class="skill-level-bar" style="width:80%"></div></div></div>
+          <div class="skill-card"><div class="skill-icon">✨</div><div class="skill-name">JavaScript</div><div class="skill-desc">ES6+, DOM manipulation, async programming, and modern frameworks</div><div class="skill-level"><div class="skill-level-bar" style="width:72%"></div></div></div>
+        </div>
+      </div>
+
+      <!-- NETWORKING — WITH CERTIFICATES -->
+      <div class="skill-section">
+        <div class="skill-section-label"><h2>Computer Networking</h2></div>
+        <div class="skill-grid">
+          <div class="skill-card">
+            <div class="skill-icon">🌍</div>
+            <div class="skill-name">Computer Networks</div>
+            <div class="skill-desc">Network architecture, protocols, routing, switching, and configuration fundamentals</div>
+            <span class="cert-badge" onclick="openModal('cCN')">🏅 View Huawei ICT Certificate</span>
+            <div class="skill-level"><div class="skill-level-bar" style="width:78%"></div></div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">🧠</div>
+            <div class="skill-name">Overview of AI</div>
+            <div class="skill-desc">Artificial intelligence foundations, machine learning concepts, and AI applications</div>
+            <span class="cert-badge" onclick="openModal('cAI')">🏅 View Huawei ICT Certificate</span>
+            <div class="skill-level"><div class="skill-level-bar" style="width:72%"></div></div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">📡</div>
+            <div class="skill-name">Computer Networks (CRA)</div>
+            <div class="skill-desc">Advanced networking via the CRA Training Program — comprehensive study and exam completion</div>
+            <span class="cert-badge" onclick="openModal('cCRA')">🏅 View Huawei ICT Certificate</span>
+            <div class="skill-level"><div class="skill-level-bar" style="width:75%"></div></div>
+          </div>
+          <div class="skill-card">
+            <div class="skill-icon">🔌</div>
+            <div class="skill-name">General Knowledge of CN</div>
+            <div class="skill-desc">Broad understanding of computer networks, addressing, and infrastructure concepts</div>
+            <span class="cert-badge" onclick="openModal('cGK')">🏅 View Huawei ICT Certificate</span>
+            <div class="skill-level"><div class="skill-level-bar" style="width:70%"></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- DATABASE -->
+      <div class="skill-section">
+        <div class="skill-section-label"><h2>Database Management</h2></div>
+        <div class="skill-grid">
+          <div class="skill-card"><div class="skill-icon">🗄</div><div class="skill-name">MySQL</div><div class="skill-desc">Database design, queries, optimization, and administration</div><div class="skill-level"><div class="skill-level-bar" style="width:75%"></div></div></div>
+          <div class="skill-card"><div class="skill-icon">📊</div><div class="skill-name">SQL</div><div class="skill-desc">Complex queries, stored procedures, triggers, and data manipulation</div><div class="skill-level"><div class="skill-level-bar" style="width:78%"></div></div></div>
+        </div>
+      </div>
+
+      <!-- DESIGN -->
+      <div class="skill-section">
+        <div class="skill-section-label"><h2>Design &amp; Multimedia</h2></div>
+        <div class="skill-grid">
+          <div class="skill-card"><div class="skill-icon">🖼</div><div class="skill-name">Photoshop</div><div class="skill-desc">Photo editing, graphic design, digital art, and UI mockups</div><div class="skill-level"><div class="skill-level-bar" style="width:72%"></div></div></div>
+          <div class="skill-card"><div class="skill-icon">🎯</div><div class="skill-name">Figma</div><div class="skill-desc">UI/UX design, wireframing, interactive prototyping, component creation, design-to-code workflow</div><div class="skill-level"><div class="skill-level-bar" style="width:80%"></div></div></div>
+          <div class="skill-card"><div class="skill-icon">🧊</div><div class="skill-name">Blender</div><div class="skill-desc">3D modeling, animation, rendering, and game asset creation</div><div class="skill-level"><div class="skill-level-bar" style="width:65%"></div></div></div>
+        </div>
+      </div>
+
+      <!-- OFFICE -->
+      <div class="skill-section">
+        <div class="skill-section-label"><h2>Office &amp; Productivity</h2></div>
+        <div class="skill-grid">
+          <div class="skill-card"><div class="skill-icon">📄</div><div class="skill-name">Microsoft Office</div><div class="skill-desc">Word, Excel, PowerPoint, Access — document creation and data management</div><div class="skill-level"><div class="skill-level-bar" style="width:85%"></div></div></div>
+          <div class="skill-card"><div class="skill-icon">💼</div><div class="skill-name">AIS</div><div class="skill-desc">Financial software, business process automation, and accounting data analysis</div><div class="skill-level"><div class="skill-level-bar" style="width:68%"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ════════════ FOOTER ════════════ -->
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <p>Rhoy<span>.</span>Abadiano</p>
+        <small>Game Developer &amp; Designer · Norzagaray College</small>
+      </div>
+      <div class="footer-nav">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="skills.html">Skills</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <p><a href="mailto:rhoyabadiano54@gmail.com">rhoyabadiano54@gmail.com</a></p>
+        <p><a href="https://linkedin.com/in/rhoyabadiano" target="_blank">LinkedIn</a></p>
+        <p><a href="https://github.com/rhoy-hub" target="_blank">GitHub</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 Rhoy Abadiano. All rights reserved.</p>
+      <a href="resume.pdf" download class="btn btn-outline" style="font-size:.8rem;padding:.4rem 1rem;">↓ Download Resume</a>
+    </div>
+  </footer>
+
+  <!-- Certificate Modals -->
+  <div id="cCN" class="modal-overlay"><div class="modal-box"><button class="modal-close" onclick="closeModal('cCN')">✕</button><h3>Computer Network — Huawei ICT Academy</h3><img src="Cn.png" class="modal-cert-img"></div></div>
+  <div id="cAI" class="modal-overlay"><div class="modal-box"><button class="modal-close" onclick="closeModal('cAI')">✕</button><h3>Overview of AI — Huawei ICT Academy</h3><img src="OVER.png" class="modal-cert-img"></div></div>
+  <div id="cCRA" class="modal-overlay"><div class="modal-box"><button class="modal-close" onclick="closeModal('cCRA')">✕</button><h3>Computer Networks (CRA) — Huawei ICT Academy</h3><img src="CRA.png" class="modal-cert-img"></div></div>
+  <div id="cGK" class="modal-overlay"><div class="modal-box"><button class="modal-close" onclick="closeModal('cGK')">✕</button><h3>General Knowledge CN — Huawei ICT Academy</h3><img src="Gen.png" class="modal-cert-img"></div></div>
+
+  <script src="shared.js"></script>
+</body>
+</html>
